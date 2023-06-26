@@ -59,4 +59,16 @@ public class WeightedChance<T>
     {
         return options.ContainsKey(key);
     }
+
+    //============= Keys ================
+    //warning, allocs memory
+    public List<T> GetKeyList() 
+    {
+        return new List<T>(options.Keys);
+    }
+
+    public Dictionary<T, float>.KeyCollection Keys()
+    {
+        return options.Keys;
+    }
 }

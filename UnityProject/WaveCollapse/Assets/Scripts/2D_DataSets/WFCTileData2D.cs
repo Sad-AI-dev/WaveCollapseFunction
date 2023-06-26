@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Tile Data 2D", menuName = "ScriptableObjects/2D WFC Tile Data")]
 public class WFCTileData2D : ScriptableObject
 {
-    public int owner;
+    public GameObject prefab;
 
     [Header("Connection settings")]
     public WeightedChance<int> topConnections = new();
