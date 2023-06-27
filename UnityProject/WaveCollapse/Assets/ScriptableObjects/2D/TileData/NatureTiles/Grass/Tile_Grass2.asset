@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c57587d5183df7247bbd3f2c59a8658b, type: 3}
-  m_Name: BlankTile
+  m_Name: Tile_Grass2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3908984592434843610, guid: 5154458779c6b2e4ebfb3027c934193a, type: 3}
-  weight: 10
-  topConnections: 0000000001000000020000000700000008000000
-  rightConnections: 000000000100000004000000060000000b000000
-  bottomConnections: 000000000300000004000000070000000a000000
-  leftConnections: 0000000002000000030000000600000009000000
+  prefab: {fileID: 7766982561489893568, guid: 8e74246101aa0484893dd5c0b2539638, type: 3}
+  weight: 1
+  topConnections: 000000000100000002000000
+  rightConnections: 000000000100000002000000
+  bottomConnections: 000000000100000002000000
+  leftConnections: 000000000100000002000000
