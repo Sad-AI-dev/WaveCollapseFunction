@@ -13,55 +13,8 @@ MonoBehaviour:
   m_Name: BlankTile
   m_EditorClassIdentifier: 
   prefab: {fileID: 3908984592434843610, guid: 5154458779c6b2e4ebfb3027c934193a, type: 3}
-  topConnections:
-    options:
-      dictionary:
-      - key: 0
-        value: 1
-      - key: 1
-        value: 1
-      - key: 2
-        value: 1
-      - key: 7
-        value: 1
-      - key: 8
-        value: 1
-  rightConnections:
-    options:
-      dictionary:
-      - key: 0
-        value: 1
-      - key: 1
-        value: 1
-      - key: 4
-        value: 1
-      - key: 6
-        value: 1
-      - key: 11
-        value: 1
-  bottomConnections:
-    options:
-      dictionary:
-      - key: 0
-        value: 1
-      - key: 3
-        value: 1
-      - key: 4
-        value: 1
-      - key: 7
-        value: 1
-      - key: 10
-        value: 1
-  leftConnections:
-    options:
-      dictionary:
-      - key: 0
-        value: 1
-      - key: 2
-        value: 1
-      - key: 3
-        value: 1
-      - key: 6
-        value: 1
-      - key: 9
-        value: 1
+  weight: 250
+  topConnections: 0000000001000000020000000700000008000000
+  rightConnections: 000000000100000004000000060000000b000000
+  bottomConnections: 000000000300000004000000070000000a000000
+  leftConnections: 0000000002000000030000000600000009000000

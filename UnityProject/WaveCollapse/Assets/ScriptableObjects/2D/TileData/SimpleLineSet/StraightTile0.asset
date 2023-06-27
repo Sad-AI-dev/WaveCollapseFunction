@@ -13,63 +13,8 @@ MonoBehaviour:
   m_Name: StraightTile0
   m_EditorClassIdentifier: 
   prefab: {fileID: 3589045656713218554, guid: 489b5b70dc66838468499d2b32944d56, type: 3}
-  topConnections:
-    options:
-      dictionary:
-      - key: 3
-        value: 1
-      - key: 4
-        value: 1
-      - key: 5
-        value: 1
-      - key: 6
-        value: 1
-      - key: 9
-        value: 1
-      - key: 10
-        value: 1
-      - key: 11
-        value: 1
-  rightConnections:
-    options:
-      dictionary:
-      - key: 0
-        value: 1
-      - key: 1
-        value: 1
-      - key: 4
-        value: 1
-      - key: 6
-        value: 1
-      - key: 11
-        value: 1
-  bottomConnections:
-    options:
-      dictionary:
-      - key: 1
-        value: 1
-      - key: 2
-        value: 1
-      - key: 5
-        value: 1
-      - key: 6
-        value: 1
-      - key: 8
-        value: 1
-      - key: 9
-        value: 1
-      - key: 11
-        value: 1
-  leftConnections:
-    options:
-      dictionary:
-      - key: 0
-        value: 1
-      - key: 2
-        value: 1
-      - key: 3
-        value: 1
-      - key: 6
-        value: 1
-      - key: 9
-        value: 1
+  weight: 1
+  topConnections: 03000000040000000500000006000000090000000a0000000b000000
+  rightConnections: 000000000100000004000000060000000b000000
+  bottomConnections: 0100000002000000050000000600000008000000090000000b000000
+  leftConnections: 0000000002000000030000000600000009000000

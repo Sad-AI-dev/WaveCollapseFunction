@@ -13,67 +13,8 @@ MonoBehaviour:
   m_Name: TsplitTile3
   m_EditorClassIdentifier: 
   prefab: {fileID: 580112041679270077, guid: 7e5865c9acde0864b85765a833f7574c, type: 3}
-  topConnections:
-    options:
-      dictionary:
-      - key: 3
-        value: 1
-      - key: 4
-        value: 1
-      - key: 5
-        value: 1
-      - key: 6
-        value: 1
-      - key: 9
-        value: 1
-      - key: 10
-        value: 1
-      - key: 11
-        value: 1
-  rightConnections:
-    options:
-      dictionary:
-      - key: 2
-        value: 1
-      - key: 3
-        value: 1
-      - key: 5
-        value: 1
-      - key: 7
-        value: 1
-      - key: 8
-        value: 1
-      - key: 9
-        value: 1
-      - key: 10
-        value: 1
-  bottomConnections:
-    options:
-      dictionary:
-      - key: 1
-        value: 1
-      - key: 2
-        value: 1
-      - key: 5
-        value: 1
-      - key: 6
-        value: 1
-      - key: 8
-        value: 1
-      - key: 9
-        value: 1
-      - key: 11
-        value: 1
-  leftConnections:
-    options:
-      dictionary:
-      - key: 0
-        value: 1
-      - key: 2
-        value: 1
-      - key: 3
-        value: 1
-      - key: 6
-        value: 1
-      - key: 9
-        value: 1
+  weight: 1
+  topConnections: 03000000040000000500000006000000090000000a0000000b000000
+  rightConnections: 0200000003000000050000000700000008000000090000000a000000
+  bottomConnections: 0100000002000000050000000600000008000000090000000b000000
+  leftConnections: 0000000002000000030000000600000009000000

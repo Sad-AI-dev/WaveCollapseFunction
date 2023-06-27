@@ -13,63 +13,8 @@ MonoBehaviour:
   m_Name: CornerTile1
   m_EditorClassIdentifier: 
   prefab: {fileID: 113220875967472316, guid: c3994351436c4894eb8bd36932a809df, type: 3}
-  topConnections:
-    options:
-      dictionary:
-      - key: 3
-        value: 1
-      - key: 4
-        value: 1
-      - key: 5
-        value: 1
-      - key: 6
-        value: 1
-      - key: 9
-        value: 1
-      - key: 10
-        value: 1
-      - key: 11
-        value: 1
-  rightConnections:
-    options:
-      dictionary:
-      - key: 0
-        value: 1
-      - key: 1
-        value: 1
-      - key: 4
-        value: 1
-      - key: 6
-        value: 1
-      - key: 11
-        value: 1
-  bottomConnections:
-    options:
-      dictionary:
-      - key: 0
-        value: 1
-      - key: 3
-        value: 1
-      - key: 4
-        value: 1
-      - key: 7
-        value: 1
-      - key: 10
-        value: 1
-  leftConnections:
-    options:
-      dictionary:
-      - key: 1
-        value: 1
-      - key: 4
-        value: 1
-      - key: 5
-        value: 1
-      - key: 7
-        value: 1
-      - key: 8
-        value: 1
-      - key: 10
-        value: 1
-      - key: 11
-        value: 1
+  weight: 1
+  topConnections: 03000000040000000500000006000000090000000a0000000b000000
+  rightConnections: 000000000100000004000000060000000b000000
+  bottomConnections: 000000000300000004000000070000000a000000
+  leftConnections: 01000000040000000500000007000000080000000a0000000b000000

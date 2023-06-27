@@ -103,31 +103,21 @@ public class WaveCollapseSolver2DEditor : Editor
     private void CreateNeighbourObjects(WFCTileData2D tile, int index)
     {
         List<int>[] neighbourData = new List<int>[] {
-            tile.topConnections.GetKeyList(),
-            tile.rightConnections.GetKeyList(),
-            tile.bottomConnections.GetKeyList(),
-            tile.leftConnections.GetKeyList()
+            tile.topConnections,
+            tile.rightConnections,
+            tile.bottomConnections,
+            tile.leftConnections
         };
 
         for (int i = 0; i < 4; i++) {
-            CreateNeighbourObjectSet(neighbourData[i], index, DirToOffset(i));
+            CreateNeighbourObjectSet(neighbourData[i], index, DirUtil.DirToV2((Direction)i));
         }
-    }
-    private Vector2 DirToOffset(int dir) //dir : 0 = up, 1 = right, 2 = down, 3 = left
-    {
-        return dir switch {
-            0 => new Vector2(0, 1),
-            1 => new Vector2(1, 0),
-            2 => new Vector2(0, -1),
-            3 => new Vector2(-1, 0),
-            _ => Vector2.zero, //should never be used
-        };
     }
 
     private void CreateNeighbourObjectSet(List<int> prefabs, int index, Vector2 offset) 
     {
         for (int i = 0; i < prefabs.Count; i++) {
-            PlacePrefab(solver.lookupTable[prefabs[i]], solver.previewHolder, (solver.previewSpacing * new Vector2(i, index)) + offset);
+            PlacePrefab(solver.LookupTable[prefabs[i]], solver.previewHolder, (solver.previewSpacing * new Vector2(i, index)) + offset);
         }
     }
 
@@ -152,28 +142,15 @@ public class WaveCollapseSolver2DEditor : Editor
 
     private void MirrorTileData(WFCTileData2D tile, int tileIndex)
     {
-        //mirror top
-        foreach (int connection in tile.topConnections.Keys()) {
-            if(!solver.dataSet.tiles[connection].bottomConnections.Contains(tileIndex)) { //data is not yet mirrored
-                solver.dataSet.tiles[connection].bottomConnections.Add(tileIndex, 1f);
-            }
-        }
-        //mirror right
-        foreach (int connection in tile.rightConnections.Keys()) {
-            if(!solver.dataSet.tiles[connection].leftConnections.Contains(tileIndex)) { //data is not yet mirrored
-                solver.dataSet.tiles[connection].leftConnections.Add(tileIndex, 1f);
-            }
-        }
-        //mirror bottom
-        foreach (int connection in tile.bottomConnections.Keys()) {
-            if(!solver.dataSet.tiles[connection].topConnections.Contains(tileIndex)) { //data is not yet mirrored
-                solver.dataSet.tiles[connection].topConnections.Add(tileIndex, 1f);
-            }
-        }
-        //mirror left
-        foreach (int connection in tile.leftConnections.Keys()) {
-            if(!solver.dataSet.tiles[connection].rightConnections.Contains(tileIndex)) { //data is not yet mirrored
-                solver.dataSet.tiles[connection].rightConnections.Add(tileIndex, 1f);
+        for (int i = 0; i < 4; i++) {
+            List<int> checkList = tile.ConnectionsFromDirection((Direction)i);
+            
+            foreach (int connection in checkList) {
+                List<int> mirrorList = solver.dataSet.tiles[connection].ConnectionsFromDirection((Direction)((i + 2) % 4));
+
+                if (!mirrorList.Contains(tileIndex)) {
+                    mirrorList.Add(tileIndex);
+                }
             }
         }
     }

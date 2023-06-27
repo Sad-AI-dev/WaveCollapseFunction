@@ -13,71 +13,8 @@ MonoBehaviour:
   m_Name: CrossTile
   m_EditorClassIdentifier: 
   prefab: {fileID: 1905927012242331636, guid: 795873dfeae684944879a9be18475411, type: 3}
-  topConnections:
-    options:
-      dictionary:
-      - key: 3
-        value: 1
-      - key: 4
-        value: 1
-      - key: 5
-        value: 1
-      - key: 6
-        value: 1
-      - key: 9
-        value: 1
-      - key: 10
-        value: 1
-      - key: 11
-        value: 1
-  rightConnections:
-    options:
-      dictionary:
-      - key: 2
-        value: 1
-      - key: 3
-        value: 1
-      - key: 5
-        value: 1
-      - key: 7
-        value: 1
-      - key: 8
-        value: 1
-      - key: 9
-        value: 1
-      - key: 10
-        value: 1
-  bottomConnections:
-    options:
-      dictionary:
-      - key: 1
-        value: 1
-      - key: 2
-        value: 1
-      - key: 5
-        value: 1
-      - key: 6
-        value: 1
-      - key: 8
-        value: 1
-      - key: 9
-        value: 1
-      - key: 11
-        value: 1
-  leftConnections:
-    options:
-      dictionary:
-      - key: 1
-        value: 1
-      - key: 4
-        value: 1
-      - key: 5
-        value: 1
-      - key: 7
-        value: 1
-      - key: 8
-        value: 1
-      - key: 10
-        value: 1
-      - key: 11
-        value: 1
+  weight: 0.5
+  topConnections: 03000000040000000500000006000000090000000a0000000b000000
+  rightConnections: 0200000003000000050000000700000008000000090000000a000000
+  bottomConnections: 0100000002000000050000000600000008000000090000000b000000
+  leftConnections: 01000000040000000500000007000000080000000a0000000b000000

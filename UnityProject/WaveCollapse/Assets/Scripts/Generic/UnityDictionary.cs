@@ -17,6 +17,13 @@ public class UnityDictionary<Key, Value> : ISerializationCallbackReceiver
 
     private Dictionary<Key, Value> dict;
 
+    //ctor
+    public UnityDictionary()
+    {
+        dictionary = new List<Pair>();
+        dict = new Dictionary<Key, Value>();
+    }
+
     //----------------serialization--------------------
     //dictionary to list
     public void OnBeforeSerialize() {

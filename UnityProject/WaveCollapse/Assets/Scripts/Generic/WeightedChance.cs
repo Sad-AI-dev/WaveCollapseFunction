@@ -11,6 +11,12 @@ public class WeightedChance<T>
     //vars
     private float totalChance = 0f;
 
+    //ctor
+    public WeightedChance()
+    {
+        options = new UnityDictionary<T, float>();
+    }
+
     //=============== Compile Chances ================
     private void CalcTotalChance()
     {
@@ -52,6 +58,12 @@ public class WeightedChance<T>
     {
         options.Remove(key);
         CalcTotalChance();
+    }
+
+    public void Clear()
+    {
+        options.Clear();
+        totalChance = 0;
     }
 
     //============ Contains ===============
