@@ -81,7 +81,7 @@ public class WaveCollapseSolver2D : MonoBehaviour
     {
         for (int i = 0; i < gridSize.x; i += chunkSize.x - 1) {
             for (int j = 0; j < gridSize.y; j += chunkSize.y - 1) {
-                GenerateChunk(new Vector2Int(i, j));
+                yield return GenerateChunk(new Vector2Int(i, j));
                 yield return new WaitForSeconds(chunkGenerationDelay);
             }
         }
@@ -90,7 +90,7 @@ public class WaveCollapseSolver2D : MonoBehaviour
     }
 
     //================= Chunk Generation ======================
-    private void GenerateChunk(Vector2Int chunkPos)
+    private IEnumerator GenerateChunk(Vector2Int chunkPos)
     {
         //step 1, compile chunk contents
         Tile2D[] chunkContents = CompileChunkContents(chunkPos);
@@ -102,6 +102,7 @@ public class WaveCollapseSolver2D : MonoBehaviour
             //check error condition
             if (lowestEntropyTiles[0].Entropy == 0) {
                 ResetChunk(chunkContents, chunkPos); //Tile has 0 possible states left, retry entire chunk
+                yield return new WaitForSeconds(chunkGenerationDelay);
                 continue;
             }
             //collapse random tile
@@ -110,6 +111,9 @@ public class WaveCollapseSolver2D : MonoBehaviour
             if (ChunkIsDoneGenerating(chunkContents)) {
                 break; //exit loop
             }
+
+            //optional
+            yield return null;
         }
     }
 

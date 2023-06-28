@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3823694376759546806, guid: 86268cf30a5574a49a0fa756b6e14d70, type: 3}
   weight: 1
-  topConnections: 
-  rightConnections: 
-  bottomConnections: 
-  leftConnections: 
+  topConnections: 000000000100000002000000110000001200000015000000
+  rightConnections: 0d0000001000000019000000
+  bottomConnections: 05000000
+  leftConnections: 04000000

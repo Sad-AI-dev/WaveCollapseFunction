@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using EditorUtil;
 
 [CustomEditor(typeof(WaveCollapseSolver2D))]
@@ -25,10 +26,12 @@ public class WaveCollapseSolver2DEditor : Editor
         //draw preview buttons
         if (GUILayout.Button("Remove Preview")) {
             DestroyPreview();
+            MarkSceneDirty();
         }
         if (GUILayout.Button("Build Preview")) {
             DestroyPreview();
             CreatePreview();
+            MarkSceneDirty();
         }
 
         InspectorDrawerUtil.DrawHeader("Tile Data Helper");
@@ -36,6 +39,10 @@ public class WaveCollapseSolver2DEditor : Editor
         if (GUILayout.Button("Mirror Tile Data")) {
             TryMirrorTileData();
         }
+    }
+    private void MarkSceneDirty()
+    {
+        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
     }
 
     //==================================================================================================
@@ -142,6 +149,7 @@ public class WaveCollapseSolver2DEditor : Editor
 
     private void MirrorTileData(WFCTileData2D tile, int tileIndex)
     {
+        bool isDirty = false;
         for (int i = 0; i < 4; i++) {
             List<int> checkList = tile.ConnectionsFromDirection((Direction)i);
             
@@ -150,8 +158,12 @@ public class WaveCollapseSolver2DEditor : Editor
 
                 if (!mirrorList.Contains(tileIndex)) {
                     mirrorList.Add(tileIndex);
+                    isDirty = true;
                 }
             }
+        }
+        if (isDirty) {
+            EditorUtility.SetDirty(tile); //mark scriptable object dirty
         }
     }
 }

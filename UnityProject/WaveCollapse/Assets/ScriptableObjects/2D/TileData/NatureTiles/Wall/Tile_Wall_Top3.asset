@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c57587d5183df7247bbd3f2c59a8658b, type: 3}
-  m_Name: Tile_Stair5
+  m_Name: Tile_Wall_Top3
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3745132765355049535, guid: 0d130e9ae6ee4c149bf07552caa5f6ca, type: 3}
+  prefab: {fileID: 107838954140910044, guid: f59a6d03815bdd5419cc1c8eec8de578, type: 3}
   weight: 1
-  topConnections: 06000000
-  rightConnections: 07000000
-  bottomConnections: 000000000100000002000000
-  leftConnections: 00000000010000000200000014000000
+  topConnections: 140000001600000018000000
+  rightConnections: 0000000001000000020000001100000014000000150000001600000018000000
+  bottomConnections: 0b000000
+  leftConnections: 0e0000000f00000003000000
