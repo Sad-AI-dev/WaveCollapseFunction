@@ -23,9 +23,11 @@ public class Tile2D : MonoBehaviour
     {
         this.solver = solver;
         possibilities = new WeightedChance<int>();
-        isCollapsed = true;
+        id = -1;
+        ResetTile();
+        //isCollapsed = true;
         //create default tile
-        CreateTile(solver.dataSet.defaultTile);
+        //CreateTile(solver.dataSet.defaultTile);
     }
 
     //============= Collapse Tile =================
@@ -35,7 +37,7 @@ public class Tile2D : MonoBehaviour
         possibilities.Clear();
     }
 
-    private void CreateTile(int tileToCreate)
+    public void CreateTile(int tileToCreate)
     {
         id = tileToCreate;
         createdTile = Instantiate(solver.LookupTable[tileToCreate], transform);

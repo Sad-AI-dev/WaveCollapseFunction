@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tile_Trim_CornerInner0
   m_EditorClassIdentifier: 
   prefab: {fileID: 7125651663727957775, guid: 2748d7ce283064a46ac10911f2a891d0, type: 3}
-  weight: 0.01
+  weight: 0.1
   topConnections: 1400000016000000
   rightConnections: 1400000015000000
   bottomConnections: 000000000100000002000000130000001400000015000000180000001900000003000000040000000d0000000e000000

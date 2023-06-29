@@ -12,6 +12,7 @@ public class WaveCollapseSolver2D : MonoBehaviour
     [SerializeField] private Transform tileHolder;
     [SerializeField] private Vector2Int gridSize;
     [SerializeField] private Vector2Int chunkSize;
+    [SerializeField] private int maxFailNum = 10;
     [SerializeField] private float chunkGenerationDelay = 0.1f;
 
     [Header("Preview Settigns")]
@@ -92,6 +93,7 @@ public class WaveCollapseSolver2D : MonoBehaviour
     //================= Chunk Generation ======================
     private IEnumerator GenerateChunk(Vector2Int chunkPos)
     {
+        int failCounter = 0; //keep track of # of failed attempts
         //step 1, compile chunk contents
         Tile2D[] chunkContents = CompileChunkContents(chunkPos);
         //step 2, reset chunk
@@ -102,7 +104,13 @@ public class WaveCollapseSolver2D : MonoBehaviour
             //check error condition
             if (lowestEntropyTiles[0].Entropy == 0) {
                 ResetChunk(chunkContents, chunkPos); //Tile has 0 possible states left, retry entire chunk
+                failCounter++;
                 yield return new WaitForSeconds(chunkGenerationDelay);
+                if (failCounter >= maxFailNum) {
+                    failCounter = 0; //reset fail counter
+                    yield return GenerateChunk(GetLastChunkPos(chunkPos)); //regenerate last chunk
+                    ResetChunk(chunkContents, chunkPos); //retry current chunk generation
+                } 
                 continue;
             }
             //collapse random tile
@@ -115,6 +123,17 @@ public class WaveCollapseSolver2D : MonoBehaviour
             //optional
             yield return null;
         }
+    }
+    private Vector2Int GetLastChunkPos(Vector2Int currentPos)
+    {
+        //try move down
+        if (currentPos.y > 0) {
+            currentPos.y -= chunkSize.y - 1;
+        }
+        else if (currentPos.x > 0) { //move left
+            currentPos.x -= chunkSize.x - 1;
+        }
+        return currentPos;
     }
 
     private Tile2D[] CompileChunkContents(Vector2Int chunkPos)
@@ -144,36 +163,48 @@ public class WaveCollapseSolver2D : MonoBehaviour
             tile.ResetTile();
         }
         //perpetuate chunk edges
-        int checkLevel = chunkPos.y + chunkSize.y + 1;
+        int checkLevel = chunkPos.y + chunkSize.y;
         //top bound
         if (checkLevel < gridSize.y) {
             for (int i = chunkPos.x; i < Mathf.Min(chunkPos.x + chunkSize.x, gridSize.x); i++) {
-                WFCTileData2D checkTileData = dataSet.tiles[grid[i][checkLevel].id];
-                grid[i][checkLevel - 1].Perpetuate(checkTileData, Direction.south);
+                int tileID = grid[i][checkLevel].id;
+                if (tileID >= 0) {
+                    WFCTileData2D checkTileData = dataSet.tiles[tileID];
+                    grid[i][checkLevel - 1].Perpetuate(checkTileData, Direction.south);
+                }
             }
         }
         //right bound
-        checkLevel = chunkPos.x + chunkSize.x + 1;
+        checkLevel = chunkPos.x + chunkSize.x;
         if (checkLevel < gridSize.x) {
             for (int i = chunkPos.y; i < Mathf.Min(chunkPos.y + chunkSize.y, gridSize.y); i++) {
-                WFCTileData2D checkTileData = dataSet.tiles[grid[checkLevel][i].id];
-                grid[checkLevel - 1][i].Perpetuate(checkTileData, Direction.west);
+                int tileID = grid[checkLevel][i].id;
+                if (tileID >= 0) {
+                    WFCTileData2D checkTileData = dataSet.tiles[tileID];
+                    grid[checkLevel - 1][i].Perpetuate(checkTileData, Direction.west);
+                }
             }
         }
         //bottom bound
         checkLevel = chunkPos.y - 1;
         if (checkLevel >= 0) {
             for (int i = chunkPos.x; i < Mathf.Min(chunkPos.x + chunkSize.x, gridSize.x); i++) {
-                WFCTileData2D checkTileData = dataSet.tiles[grid[i][checkLevel].id];
-                grid[i][checkLevel + 1].Perpetuate(checkTileData, Direction.north);
+                int tileID = grid[i][checkLevel].id;
+                if (tileID >= 0) {
+                    WFCTileData2D checkTileData = dataSet.tiles[tileID];
+                    grid[i][checkLevel + 1].Perpetuate(checkTileData, Direction.north);
+                }
             }
         }
         //left bound
         checkLevel = chunkPos.x - 1;
         if (checkLevel >= 0) {
             for (int i = chunkPos.y; i < Mathf.Min(chunkPos.y + chunkSize.y, gridSize.y); i++) {
-                WFCTileData2D checkTileData = dataSet.tiles[grid[checkLevel][i].id];
-                grid[checkLevel + 1][i].Perpetuate(checkTileData, Direction.east);
+                int tileID = grid[checkLevel][i].id;
+                if (tileID >= 0) {
+                    WFCTileData2D checkTileData = dataSet.tiles[tileID];
+                    grid[checkLevel + 1][i].Perpetuate(checkTileData, Direction.east);
+                }
             }
         }
     }
