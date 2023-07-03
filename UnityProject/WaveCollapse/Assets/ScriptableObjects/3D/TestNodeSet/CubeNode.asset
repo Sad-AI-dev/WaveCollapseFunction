@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a4e71b9abd1ce4c8de9ff8d9e9c8db, type: 3}
+  m_Name: CubeNode
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6591435721081274419, guid: 0c36f26e196a8dd468a4750205361cae, type: 3}
+  weight: 1
+  northConnections: 000000000100000005000000
+  eastConnections: 000000000100000006000000
+  southConnections: 000000000100000003000000
+  westConnections: 000000000100000004000000
+  topConnections: 00000000010000000200000003000000040000000500000006000000
+  bottomConnections: 0100000003000000040000000500000006000000

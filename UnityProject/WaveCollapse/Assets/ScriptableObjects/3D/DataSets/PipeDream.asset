@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5df65e790c02e64fbd05acfb4f7f1ec, type: 3}
+  m_Name: PipeDream
+  m_EditorClassIdentifier: 
+  airNode: 0
+  defaultFloorNode: 1
+  nodes:
+  - {fileID: 11400000, guid: b2dc7efa4fc91824fa1ccad12b62cd18, type: 2}

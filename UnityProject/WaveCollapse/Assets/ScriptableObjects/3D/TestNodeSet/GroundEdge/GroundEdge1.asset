@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a4e71b9abd1ce4c8de9ff8d9e9c8db, type: 3}
+  m_Name: GroundEdge1
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5818730164573505277, guid: 2bad3e2a09400914abba5aca323b8b42, type: 3}
+  weight: 1
+  northConnections: 000000000200000004000000
+  eastConnections: 01000000
+  southConnections: 000000000200000004000000
+  westConnections: 0000000006000000
+  topConnections: 0000000001000000
+  bottomConnections: 01000000

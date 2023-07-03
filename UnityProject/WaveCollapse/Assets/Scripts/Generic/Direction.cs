@@ -36,4 +36,15 @@ public static class DirUtil
             _ => Vector3Int.zero, //should never be used
         };
     }
+
+    public static Direction GetOpposite(Direction input) { return GetOpposite((int)input); }
+    public static Direction GetOpposite(int input) 
+    { 
+        if (input < 4) { //dir is on 2D plane
+            return (Direction)((input + 2) % 4);
+        }
+        else { //top or bottom
+            return (Direction)(4 + ((input - 3) % 2));
+        }
+    }
 }

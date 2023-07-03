@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a4e71b9abd1ce4c8de9ff8d9e9c8db, type: 3}
+  m_Name: AirNode
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2618087942874405458, guid: 9270777bce981a34f8dc3950133c0217, type: 3}
+  weight: 1
+  northConnections: 0000000002000000030000000400000006000000
+  eastConnections: 0000000002000000030000000400000005000000
+  southConnections: 0000000002000000040000000500000006000000
+  westConnections: 0000000002000000030000000500000006000000
+  topConnections: 00000000
+  bottomConnections: 00000000010000000200000003000000040000000500000006000000
