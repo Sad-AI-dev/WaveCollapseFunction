@@ -164,6 +164,7 @@ public class WaveCollapseSolver3DEditor : Editor
         }
         if (isDirty) {
             EditorUtility.SetDirty(node); //mark scriptable object dirty
+            AssetDatabase.SaveAssetIfDirty(node);
         }
     }
 
@@ -205,6 +206,7 @@ public class WaveCollapseSolver3DEditor : Editor
 
         if (isDirty) {
             EditorUtility.SetDirty(node);
+            AssetDatabase.SaveAssetIfDirty(node);
         }
     }
 }

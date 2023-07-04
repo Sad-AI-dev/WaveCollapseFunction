@@ -13,7 +13,11 @@ public class WaveCollapseSolver3D : MonoBehaviour
     [SerializeField] private Vector3Int gridSize;
     [SerializeField] private Vector3Int chunkSize;
     [SerializeField] private int maxFailNum = 100;
+    [SerializeField] private bool generateDefaults = true;
+
+    [Header("Generation Timings")]
     [SerializeField] private float chunkGenerationDelay = 0.1f;
+    [SerializeField] private bool showNodePlace = true;
 
     [Header("Preview Settigns")]
     public Transform previewHolder;
@@ -80,7 +84,9 @@ public class WaveCollapseSolver3D : MonoBehaviour
         node.transform.position = pos;
         //set vars
         node.Initialize(this);
-        node.CreateNode(pos.y > 0 ? dataSet.airNode : dataSet.defaultFloorNode);
+        if (generateDefaults) { //create default tiles
+            node.CreateNode(pos.y > 0 ? dataSet.airNode : dataSet.defaultFloorNode);
+        }
         node.posInGrid = pos;
         //record created node
         grid[pos.x][pos.y][pos.z] = node;
@@ -123,12 +129,12 @@ public class WaveCollapseSolver3D : MonoBehaviour
                 yield return HandleGenerationFailCo(contents, chunkPos);
             }
             else {
-                CollapseRandomTile(lowestEntropyTiles);
+                CollapseRandomTile(lowestEntropyTiles, chunkPos);
                 if (ChunkIsGenerated(contents)) {
                     break; //done generating chunk
                 }
             }
-            yield return null; //optional
+            if (showNodePlace) { yield return null; } //optional
             firstTry = false;
         }
         //4: reset for next chunk
@@ -188,11 +194,11 @@ public class WaveCollapseSolver3D : MonoBehaviour
     }
     private Vector3Int GetLastChunkPos(Vector3Int chunkPos)
     {
-        if (chunkPos.x > 0) {
-            chunkPos.x -= chunkSize.x - 1;
-        }
-        else if (chunkPos.z > 0) {
+        if (chunkPos.z > 0) {
             chunkPos.z -= chunkSize.z - 1;
+        }
+        else if (chunkPos.x > 0) {
+            chunkPos.x -= chunkSize.x - 1;
         }
         else if (chunkPos.y > 0) { //try move back down
             chunkPos.y -= chunkSize.y - 1;
@@ -200,7 +206,7 @@ public class WaveCollapseSolver3D : MonoBehaviour
         return chunkPos;
     }
 
-    private void CollapseRandomTile(List<Node3D> options)
+    private void CollapseRandomTile(List<Node3D> options, Vector3Int chunkPos)
     {
         Node3D pickedTile = options[Random.Range(0, options.Count)];
         //collapse Tile
@@ -209,7 +215,7 @@ public class WaveCollapseSolver3D : MonoBehaviour
         for (int i = 0; i < 6; i++) { //perpetuate to all direct neighbours
             Vector3Int pos = pickedTile.posInGrid + DirUtil.DirToV3((Direction)i);
             //bounds check
-            if (PosIsInBounds(pos)) {
+            if (PosIsInBounds(pos) && PosInChunkBounds(pos, chunkPos)) {
                 grid[pos.x][pos.y][pos.z].Perpetuate(dataSet.nodes[pickedTile.id], (Direction)i);
             }
         }
@@ -219,6 +225,13 @@ public class WaveCollapseSolver3D : MonoBehaviour
         return pos.x >= 0 && pos.x < gridSize.x
             && pos.y >= 0 && pos.y < gridSize.y
             && pos.z >= 0 && pos.z < gridSize.z;
+    }
+    private bool PosInChunkBounds(Vector3Int pos, Vector3Int chunkPos)
+    {
+        Vector3Int chunkEndPos = chunkPos + chunkSize;
+        return pos.x >= chunkPos.x && pos.x < chunkEndPos.x
+            && pos.y >= chunkPos.y && pos.y < chunkEndPos.y
+            && pos.z >= chunkPos.z && pos.z < chunkEndPos.z;
     }
 
     private bool ChunkIsGenerated(Node3D[] contents)

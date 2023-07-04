@@ -35,6 +35,7 @@ public class Node3D : MonoBehaviour
 
     public void CreateNode(int tileToCreate)
     {
+        if (tileToCreate == -1) { return; }
         id = tileToCreate;
         createdTile = Instantiate(solver.LookupTable[tileToCreate], transform);
         isCollapsed = true;

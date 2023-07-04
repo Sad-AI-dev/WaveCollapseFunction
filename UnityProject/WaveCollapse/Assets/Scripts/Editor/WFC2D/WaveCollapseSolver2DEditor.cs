@@ -164,6 +164,7 @@ public class WaveCollapseSolver2DEditor : Editor
         }
         if (isDirty) {
             EditorUtility.SetDirty(tile); //mark scriptable object dirty
+            AssetDatabase.SaveAssetIfDirty(tile);
         }
     }
 }

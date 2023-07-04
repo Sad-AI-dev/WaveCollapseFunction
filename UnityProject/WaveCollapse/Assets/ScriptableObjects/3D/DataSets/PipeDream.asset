@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PipeDream
   m_EditorClassIdentifier: 
   airNode: 0
-  defaultFloorNode: 1
+  defaultFloorNode: -1
   nodes:
   - {fileID: 11400000, guid: b2dc7efa4fc91824fa1ccad12b62cd18, type: 2}
   - {fileID: 11400000, guid: e84ae10a7c52a8242b43d6392d03e061, type: 2}
