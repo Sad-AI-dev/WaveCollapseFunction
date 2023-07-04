@@ -16,3 +16,19 @@ MonoBehaviour:
   defaultFloorNode: 1
   nodes:
   - {fileID: 11400000, guid: b2dc7efa4fc91824fa1ccad12b62cd18, type: 2}
+  - {fileID: 11400000, guid: e84ae10a7c52a8242b43d6392d03e061, type: 2}
+  - {fileID: 11400000, guid: 70b1b796951f82943be5b1b971d4852b, type: 2}
+  - {fileID: 11400000, guid: 10b1beef26ec44d46b133aceae5e6943, type: 2}
+  - {fileID: 11400000, guid: f7da6a569906b9c43b85913226d682ad, type: 2}
+  - {fileID: 11400000, guid: 9dbc4adc905a75442a228bb46e33db86, type: 2}
+  - {fileID: 11400000, guid: 958e354c10e3ada438568a534a9e2ff1, type: 2}
+  - {fileID: 11400000, guid: 18d7651133ff3924091270bcb31ac936, type: 2}
+  - {fileID: 11400000, guid: a02ed7d884e9ad84aac0de4ab8cc9962, type: 2}
+  - {fileID: 11400000, guid: 7207c8923c97b9e4b8cefd4c7f372331, type: 2}
+  - {fileID: 11400000, guid: ccb081dc397c0ae448ecd802edc84fb6, type: 2}
+  - {fileID: 11400000, guid: 22945be72df43ee44b1b0d5107a86317, type: 2}
+  - {fileID: 11400000, guid: 95099ea92398d15468034454b9cd9e8d, type: 2}
+  - {fileID: 11400000, guid: b0d22009a1827dc4eaf40fc28474c8dc, type: 2}
+  - {fileID: 11400000, guid: b8cbf1fc2520caa4d98ddeb937c6d58a, type: 2}
+  - {fileID: 11400000, guid: c278d0fbf21d5f04f953de054a1c422b, type: 2}
+  - {fileID: 11400000, guid: 2cfd91db2fc5c0745843d0da17f9063e, type: 2}

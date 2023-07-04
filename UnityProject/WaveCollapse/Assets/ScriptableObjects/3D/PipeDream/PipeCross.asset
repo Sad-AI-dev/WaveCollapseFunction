@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a4e71b9abd1ce4c8de9ff8d9e9c8db, type: 3}
+  m_Name: PipeCross
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7713775354601592495, guid: ae9098c8822f8ae4d87a0e65b4f45231, type: 3}
+  weight: 1
+  northConnections: 01000000
+  eastConnections: 01000000
+  southConnections: 01000000
+  westConnections: 01000000
+  topConnections: 01000000
+  bottomConnections: 01000000

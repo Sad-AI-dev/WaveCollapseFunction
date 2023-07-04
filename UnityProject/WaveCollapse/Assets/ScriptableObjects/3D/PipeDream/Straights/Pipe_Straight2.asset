@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a4e71b9abd1ce4c8de9ff8d9e9c8db, type: 3}
+  m_Name: Pipe_Straight2
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 315547838288440205, guid: 1b6747948aa4d1a4a8fceccc6f0da753, type: 3}
+  weight: 1
+  northConnections: 000000000200000004000000
+  eastConnections: 0100000004000000
+  southConnections: 000000000200000004000000
+  westConnections: 0100000004000000
+  topConnections: 000000000300000004000000
+  bottomConnections: 000000000300000004000000

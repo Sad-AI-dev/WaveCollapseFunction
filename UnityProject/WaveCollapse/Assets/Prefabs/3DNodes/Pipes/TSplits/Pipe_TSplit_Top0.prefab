@@ -342,7 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7659569943148750423}
   m_Layer: 0
-  m_Name: Pipe_TSplit
+  m_Name: Pipe_TSplit_Top0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
