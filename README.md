@@ -4,11 +4,15 @@ The project contains a 2d and 3d iteration of the algorithm, both with 2 data se
 This project was created for an open-ended excercise during University.
 
 ## 2D Algorithm
+Simple lines tileset demo:  
 ![lines algorithm](Readme-Files/2D-Lines.gif?raw=true)  
+
+Nature tileset demo:  
 ![Nature algorithm](Readme-Files/2D-Nature.gif?raw=true)
 
 ## 3D Algorithm
-**Add gifs of the 3d algorithm doing its thing here**
+Pipes tileset demo:  
+![Pipes algorithm](Readme-Files/3D-Pipes.gif?raw=true)
 
 ## Potential for improvement
 This is my first experiment with the Wave Collapse Function Algorithm, so the results have some room for improvement.  
