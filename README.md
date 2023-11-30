@@ -4,7 +4,8 @@ The project contains a 2d and 3d iteration of the algorithm, both with 2 data se
 This project was created for an open-ended excercise during University.
 
 ## 2D Algorithm
-**Add gifs of the 2D algorithm doing its thing here**
+![lines algorithm](Readme-Files/2D-Lines.gif?raw=true)  
+![Nature algorithm](Readme-Files/2D-Nature.gif?raw=true)
 
 ## 3D Algorithm
 **Add gifs of the 3d algorithm doing its thing here**
